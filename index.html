@@ -4,98 +4,143 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link  rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-  
-  <title> TRANG CHỦ</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+  <title>Hotel Booking</title>
   <style>
-    .availability-form{
+    .availability-section {
       margin-top: -50px;
       z-index: 2;
       position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .room-section, .contact-section {
+      text-align: center;
+    }
+
+    .contact-map {
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     @media screen and (max-width: 575px) {
-      .availability-form{
+      .availability-section {
         margin-top: 25px;
         padding: 0 35px;
       } 
     }
   </style>
 </head>
-<body class="bg-light">
+<body class="background-light">
 
-  
+  <!-- Image Slider -->
+  <section class="slider-section text-center">
+    <div class="container-fluid slider-container mt-4">
+      <div class="swiper image-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="path_to_image" class="full-width display-block">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Carousel -->
-
-  
-
-  <!-- check availability form -->
-
-  <div class="container availability-form">
-    <div class="row">
-      <div class="col-lg-12 bg-white shadow p-4 rounded">
-        <h5 class="mb-4">Tìm Phòng</h5>
-        <form action="rooms.php">
+  <!-- Room Availability Form -->
+  <section class="availability-section container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 form-container shadow p-4 rounded text-center">
+        <h5 class="mb-4">Tìm phòng</h5>
+        <form action="#">
           <div class="row align-items-end">
             <div class="col-lg-3 mb-3">
-              <label class="form-label" style="font-weight: 500;">Ngày Nhận Phòng</label>
-              <input type="date" class="form-control shadow-none" name="checkin" required>
+              <label class="form-label">Ngày nhận phòng</label>
+              <input type="date" class="form-control" required>
             </div>
             <div class="col-lg-3 mb-3">
-              <label class="form-label" style="font-weight: 500;">Ngày Trả Phòng</label>
-              <input type="date" class="form-control shadow-none" name="checkout" required>
+              <label class="form-label">Ngày trả phòng</label>
+              <input type="date" class="form-control" required>
             </div>
             <div class="col-lg-2 mb-3">
-              <label class="form-label" style="font-weight: 500;">Người Lớn</label>
-              <select class="form-select shadow-none" name="adult">
-               
+              <label class="form-label">Người lớn</label>
+              <select class="form-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
               </select>
             </div>
             <div class="col-lg-2 mb-3">
-              <label class="form-label" style="font-weight: 500;">Trẻ Em</label>
-              <select class="form-select shadow-none" name="children">
-                
+              <label class="form-label">Trẻ em</label>
+              <select class="form-select">
+                <option value="0">0</option>
+                <option value="1">1</option>
               </select>
             </div>
-            <input type="hidden" name="check_availability">
-            <div class="col-lg-2 mb-lg-3 mt-2">
-              <button type="submit" class="btn text-white shadow-none custom-bg">Tìm Phòng</button>
+            <div class="col-lg-2 submit-container mt-2 text-center">
+              <button type="submit" class="btn text-white submit-btn">Tìm phòng</button>
             </div>
           </div>
         </form>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Our Rooms -->
+  <!-- Rooms Section -->
+  <section class="room-section container">
+    <h2 class="section-title">Phòng</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 my-3">
+        <div class="card room-card border-0 shadow">
+          <img src="room_image" class="card-img-top">
+          <div class="card-body">
+            <h5>Số phòng</h5>
+            <h6 class="mb-4">Giá phòng</h6>
+            <div class="features">Đặc trưng</div>
+            <div class="facilities">Các tiện nghi và thiết  bị</div>
+           
+            <div class="d-flex justify-content-evenly mb-2">
+              <a href="#" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2 >PHÒNG</h2>
+  <!-- Contact Section -->
+  <section class="contact-section container">
+    <h2 class="section-title">Liên hệ</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 contact-map">
+        <iframe class="w-100 rounded" height="320px" src="map_url" loading="lazy"></iframe>
+      </div>
+      <div class="col-lg-4 contact-info">
+        <div class="contact-card text-center">
+          <h5>Nếu cần hỗ trợ vui lòng liên hệ</h5>
+          <a href="tel:+1234567890">+1234567890</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  
-
-  <!-- Our Facilities -->
-
-  <h2 >CÁC TIỆN NGHI</h2>
-
-  
-
-  <!-- Testimonials -->
-
-  <h2 >ĐÁNH GIÁ TỪ KHÁCH HÀNG</h2>
-
- 
-
-  <!-- Password reset modal and code -->
-
- 
-
-  
-  
-  
-
-  
-
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".image-slider", {
+      spaceBetween: 30,
+      effect: "fade",
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      }
+    });
+  </script>
 
 </body>
 </html>
