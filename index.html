@@ -1,146 +1,1055 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-  <title>Hotel Booking</title>
-  <style>
-    .availability-section {
-      margin-top: -50px;
-      z-index: 2;
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&amp;family=Poppins:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
 
-    .room-section, .contact-section {
-      text-align: center;
-    }
-
-    .contact-map {
-      display: flex;
-      justify-content: center;
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    @media screen and (max-width: 575px) {
-      .availability-section {
-        margin-top: 25px;
-        padding: 0 35px;
-      } 
-    }
-  </style>
-</head>
-<body class="background-light">
-
-  <!-- Image Slider -->
-  <section class="slider-section text-center">
-    <div class="container-fluid slider-container mt-4">
-      <div class="swiper image-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="path_to_image" class="full-width display-block">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Room Availability Form -->
-  <section class="availability-section container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 form-container shadow p-4 rounded text-center">
-        <h5 class="mb-4">Tìm phòng</h5>
-        <form action="#">
-          <div class="row align-items-end">
-            <div class="col-lg-3 mb-3">
-              <label class="form-label">Ngày nhận phòng</label>
-              <input type="date" class="form-control" required>
-            </div>
-            <div class="col-lg-3 mb-3">
-              <label class="form-label">Ngày trả phòng</label>
-              <input type="date" class="form-control" required>
-            </div>
-            <div class="col-lg-2 mb-3">
-              <label class="form-label">Người lớn</label>
-              <select class="form-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-              </select>
-            </div>
-            <div class="col-lg-2 mb-3">
-              <label class="form-label">Trẻ em</label>
-              <select class="form-select">
-                <option value="0">0</option>
-                <option value="1">1</option>
-              </select>
-            </div>
-            <div class="col-lg-2 submit-container mt-2 text-center">
-              <button type="submit" class="btn text-white submit-btn">Tìm phòng</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rooms Section -->
-  <section class="room-section container">
-    <h2 class="section-title">Phòng</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-4 col-md-6 my-3">
-        <div class="card room-card border-0 shadow">
-          <img src="room_image" class="card-img-top">
-          <div class="card-body">
-            <h5>Số phòng</h5>
-            <h6 class="mb-4">Giá phòng</h6>
-            <div class="features">Đặc trưng</div>
-            <div class="facilities">Các tiện nghi và thiết  bị</div>
-           
-            <div class="d-flex justify-content-evenly mb-2">
-              <a href="#" class="btn btn-outline-dark">Chi tiết</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact-section container">
-    <h2 class="section-title">Liên hệ</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-8 contact-map">
-        <iframe class="w-100 rounded" height="320px" src="map_url" loading="lazy"></iframe>
-      </div>
-      <div class="col-lg-4 contact-info">
-        <div class="contact-card text-center">
-          <h5>Nếu cần hỗ trợ vui lòng liên hệ</h5>
-          <a href="tel:+1234567890">+1234567890</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".image-slider", {
-      spaceBetween: 30,
-      effect: "fade",
-      loop: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
+    <title>TRANG CHỦ</title>
+    <style>
+      .availability-form {
+        margin-top: -50px;
+        z-index: 2;
+        position: relative;
       }
-    });
-  </script>
 
-</body>
+      @media screen and (max-width: 575px) {
+        .availability-form {
+          margin-top: 25px;
+          padding: 0 35px;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    
+    
+
+    <div class="container-fluid px-lg-4 mt-4">
+      <div
+        class="swiper swiper-container swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events"
+      >
+        <div
+          class="swiper-wrapper"
+          id="swiper-wrapper-54d804e9471510792"
+          aria-live="off"
+          style="transition-duration: 0ms"
+        >
+          <div
+            class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev"
+            data-swiper-slide-index="4"
+            role="group"
+            aria-label="5 / 5"
+            style="
+              width: 807px;
+              transition-duration: 0ms;
+              opacity: 1;
+              transform: translate3d(0px, 0px, 0px);
+            "
+          >
+            <img
+              src="img/"
+              class="w-100 d-block"
+            />
+          </div>
+          <div
+            class="swiper-slide swiper-slide-duplicate-active"
+            data-swiper-slide-index="0"
+            role="group"
+            aria-label="1 / 5"
+            style="
+              width: 807px;
+              transition-duration: 0ms;
+              opacity: 1;
+              transform: translate3d(-807px, 0px, 0px);
+            "
+          >
+            <img
+              src="http://localhost:/khachsan/images/carousel/IMG_62045.png"
+              class="w-100 d-block"
+            />
+          </div>
+          <div
+            class="swiper-slide"
+            data-swiper-slide-index="1"
+            role="group"
+            aria-label="2 / 5"
+            style="
+              width: 807px;
+              transition-duration: 0ms;
+              opacity: 1;
+              transform: translate3d(-1614px, 0px, 0px);
+            "
+          >
+            <img
+              src="http://localhost:/khachsan/images/carousel/IMG_93127.png"
+              class="w-100 d-block"
+            />
+          </div>
+          <div
+            class="swiper-slide"
+            data-swiper-slide-index="2"
+            role="group"
+            aria-label="3 / 5"
+            style="
+              width: 807px;
+              transition-duration: 0ms;
+              opacity: 1;
+              transform: translate3d(-2421px, 0px, 0px);
+            "
+          >
+            <img
+              src="http://localhost:/khachsan/images/carousel/IMG_99736.png"
+              class="w-100 d-block"
+            />
+          </div>
+          <div
+            class="swiper-slide"
+            data-swiper-slide-index="3"
+            role="group"
+            aria-label="4 / 5"
+            style="
+              width: 807px;
+              transition-duration: 0ms;
+              opacity: 1;
+              transform: translate3d(-3228px, 0px, 0px);
+            "
+          >
+            <img
+              src="http://localhost:/khachsan/images/carousel/IMG_40905.png"
+              class="w-100 d-block"
+            />
+          </div>
+          <div
+            class="swiper-slide swiper-slide-prev swiper-slide-duplicate-next"
+            data-swiper-slide-index="4"
+            role="group"
+            aria-label="5 / 5"
+            style="
+              width: 807px;
+              transition-duration: 0ms;
+              opacity: 1;
+              transform: translate3d(-4035px, 0px, 0px);
+            "
+          >
+            <img
+              src="http://localhost:/khachsan/images/carousel/IMG_55677.png"
+              class="w-100 d-block"
+            />
+          </div>
+          <div
+            class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-active"
+            data-swiper-slide-index="0"
+            role="group"
+            aria-label="1 / 5"
+            style="
+              width: 807px;
+              transition-duration: 0ms;
+              opacity: 1;
+              transform: translate3d(-4842px, 0px, 0px);
+            "
+          >
+            <img
+              src="http://localhost:/khachsan/images/carousel/IMG_62045.png"
+              class="w-100 d-block"
+            />
+          </div>
+        </div>
+        <span
+          class="swiper-notification"
+          aria-live="assertive"
+          aria-atomic="true"
+        ></span>
+      </div>
+    </div>
+
+    
+
+    <div class="container availability-form">
+      <div class="row">
+        <div class="col-lg-12 bg-white shadow p-4 rounded">
+          <h5 class="mb-4">Tìm Phòng</h5>
+          <form action="rooms.php">
+            <div class="row align-items-end">
+              <div class="col-lg-3 mb-3">
+                <label class="form-label" style="font-weight: 500"
+                  >Ngày Nhận Phòng</label
+                >
+                <input
+                  type="date"
+                  class="form-control shadow-none"
+                  name="checkin"
+                  required=""
+                />
+              </div>
+              <div class="col-lg-3 mb-3">
+                <label class="form-label" style="font-weight: 500"
+                  >Ngày Trả Phòng</label
+                >
+                <input
+                  type="date"
+                  class="form-control shadow-none"
+                  name="checkout"
+                  required=""
+                />
+              </div>
+              <div class="col-lg-2 mb-3">
+                <label class="form-label" style="font-weight: 500"
+                  >Người Lớn</label
+                >
+                <select class="form-select shadow-none" name="adult">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                </select>
+              </div>
+              <div class="col-lg-2 mb-3">
+                <label class="form-label" style="font-weight: 500"
+                  >Trẻ Em</label
+                >
+                <select class="form-select shadow-none" name="children">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+              <input type="hidden" name="check_availability" />
+              <div class="col-lg-2 mb-lg-3 mt-2">
+                <button
+                  type="submit"
+                  class="btn text-white shadow-none custom-bg"
+                >
+                  Tìm Phòng
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">PHÒNG</h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 my-3">
+          <div
+            class="card border-0 shadow"
+            style="max-width: 350px; margin: auto"
+          >
+            <img
+              src="img/1.jpg"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5>Phòng Đơn</h5>
+              <h6 class="mb-4">500000 vnđ mỗi đêm</h6>
+              <div class="features mb-4">
+                <h6 class="mb-1">Cơ sở</h6>
+                <span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Phòng Ngủ
+                </span>
+              </div>
+              <div class="facilities mb-4">
+                <h6 class="mb-1">Tiện nghi &amp; Trang thiết bị</h6>
+                <span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Wifi
+                </span>
+              </div>
+              <div class="guests mb-4">
+                <h6 class="mb-1">Khách Hàng</h6>
+                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                  2 Người Lớn
+                </span>
+                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                  2 Trẻ Em
+                </span>
+              </div>
+
+              <div class="d-flex justify-content-evenly mb-2">
+                <button
+                  onclick="checkLoginToBook(0,8)"
+                  class="btn btn-sm text-white custom-bg shadow-none"
+                >
+                  Đặt Ngay
+                </button>
+                <a
+                  href="room_details.php?id=8"
+                  class="btn btn-sm btn-outline-dark shadow-none"
+                  >Chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 my-3">
+          <div
+            class="card border-0 shadow"
+            style="max-width: 350px; margin: auto"
+          >
+            <img
+              src="img/IMG_11892.png"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5>Phòng Vip 3</h5>
+              <h6 class="mb-4">1500000 vnđ mỗi đêm</h6>
+              <div class="features mb-4">
+                <h6 class="mb-1">Cơ sở</h6>
+                <span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Phòng Ngủ </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Ban Công </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Phòng Bếp </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Ghế sofa
+                </span>
+              </div>
+              <div class="facilities mb-4">
+                <h6 class="mb-1">Tiện nghi &amp; Trang thiết bị</h6>
+                <span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Wifi </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Điều Hoà </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Tivi </span src=
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Máy Sưởi </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Nóng Lạnh
+                </span>
+              </div>
+              <div class="guests mb-4">
+                <h6 class="mb-1">Khách Hàng</h6>
+                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                  9 Người Lớn
+                </span>
+                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                  10 Trẻ Em
+                </span>
+              </div>
+
+              <div class="d-flex justify-content-evenly mb-2">
+                <button
+                  onclick="checkLoginToBook(0,6)"
+                  class="btn btn-sm text-white custom-bg shadow-none"
+                >
+                  Đặt Ngay
+                </button>
+                <a
+                  href="room_details.php?id=6"
+                  class="btn btn-sm btn-outline-dark shadow-none"
+                  >Chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 my-3">
+          <div
+            class="card border-0 shadow"
+            style="max-width: 350px; margin: auto"
+          >
+            <img
+              src="img/IMG_23744.png"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5>Phòng Vip 2</h5>
+              <h6 class="mb-4">1200000 vnđ mỗi đêm</h6>
+              <div class="features mb-4">
+                <h6 class="mb-1">Cơ sở</h6>
+                <span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Phòng Ngủ </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Ban Công </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Ghế sofa
+                </span>
+              </div>
+              <div class="facilities mb-4">
+                <h6 class="mb-1">Tiện nghi &amp; Trang thiết bị</h6>
+                <span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Wifi </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Điều Hoà </span
+                ><span
+                  class="badge rounded-pill bg-light text-dark text-wrap me-1 mb-1"
+                >
+                  Nóng Lạnh
+                </span>
+              </div>
+              <div class="guests mb-4">
+                <h6 class="mb-1">Khách Hàng</h6>
+                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                  8 Người Lớn
+                </span>
+                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                  6 Trẻ Em
+                </span>
+              </div>
+
+              <div class="d-flex justify-content-evenly mb-2">
+                <button
+                  onclick="checkLoginToBook(0,5)"
+                  class="btn btn-sm text-white custom-bg shadow-none"
+                >
+                  Đặt Ngay
+                </button>
+                <a
+                  href="room_details.php?id=5"
+                  class="btn btn-sm btn-outline-dark shadow-none"
+                  >Chi tiết</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 text-center mt-5">
+          <a
+            href="rooms.php"
+            class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none"
+            >Xem Thêm &gt;&gt;&gt;</a
+          >
+        </div>
+      </div>
+    </div>
+
+    
+
+    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">CÁC TIỆN NGHI</h2>
+
+    <div class="container">
+      <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
+        <div
+          class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3"
+        >
+          <img
+            src="img/IMG_27079.svg"
+            width="60px"
+          />
+          <h5 class="mt-3">Nóng Lạnh</h5>
+        </div>
+        <div
+          class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3"
+        >
+          <img
+            src="img/IMG_96423.svg"
+            width="60px"
+          />
+          <h5 class="mt-3">Máy Sưởi</h5>
+        </div>
+        <div
+          class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3"
+        >
+          <img
+            src="img/IMG_47816.svg"
+            width="60px"
+          />
+          <h5 class="mt-3">Spa</h5>
+        </div>
+        <div
+          class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3"
+        >
+          <img
+            src="img/IMG_41622.svg"
+            width="60px"
+          />
+          <h5 class="mt-3">Tivi</h5>
+        </div>
+        <div
+          class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3"
+        >
+          <img
+            src="img/IMG_49949.svg"
+            width="60px"
+          />
+          <h5 class="mt-3">Điều Hoà</h5>
+        </div>
+        <div class="col-lg-12 text-center mt-5">
+          <a
+            href="facilities.php"
+            class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none"
+            >Xem thêm &gt;&gt;&gt;</a
+          >
+        </div>
+      </div>
+    </div>
+
+  
+
+    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">
+      ĐÁNH GIÁ TỪ KHÁCH HÀNG
+    </h2>
+
+    <div class="container mt-5">
+      <div
+        class="swiper swiper-testimonials swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events"
+      >
+        <div
+          class="swiper-wrapper mb-5"
+          id="swiper-wrapper-a50f8d5f79333ca2"
+          aria-live="polite"
+          style="transform: translate3d(0px, 0px, 0px)"
+        >
+          Chưa có đánh giá nào!
+        </div>
+        <div
+          class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock"
+        ></div>
+        <span
+          class="swiper-notification"
+          aria-live="assertive"
+          aria-atomic="true"
+        ></span>
+      </div>
+      <div class="col-lg-12 text-center mt-5">
+        <a
+          href="about.php"
+          class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none"
+          >Xem thêm &gt;&gt;&gt;</a
+        >
+      </div>
+    </div>
+
+   
+
+    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">LIÊN HỆ</h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
+          <iframe
+            class="w-100 rounded"
+            height="320px"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.110348170116!2d105.69317477506567!3d18.65904358246151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cddf0bf20f23:0x86154b56a284fa6d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBWaW5o!5e0!3m2!1svi!2s!4v1682140114536!5m2!1svi!2s"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <div class="bg-white p-4 rounded mb-4">
+            <h5>Bạn cần hỗ trợ ? Hãy gọi ngay</h5>
+            <a
+              href="tel: +84974562765"
+              class="d-inline-block mb-2 text-decoration-none text-dark"
+            >
+              <i class="bi bi-telephone-fill"></i> +84974562765
+            </a>
+            <br />
+            <a
+              href="tel: +84974562765"
+              class="d-inline-block text-decoration-none text-dark"
+            >
+              <i class="bi bi-telephone-fill"></i> +84974562765
+            </a>
+          </div>
+          <div class="bg-white p-4 rounded mb-4">
+            <h5>Theo dõi ngay</h5>
+
+            <a href="https://www.facebook.com/" class="d-inline-block mb-3">
+              <span class="badge bg-light text-dark fs-6 p-2">
+                <i class="bi bi-facebook me-1"></i> Facebook
+              </span>
+            </a>
+            <br />
+            <a href="https://www.facebook.com/" class="d-inline-block">
+              <span class="badge bg-light text-dark fs-6 p-2">
+                <i class="bi bi-instagram me-1"></i> Instagram
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
+
+    <div
+      class="modal fade"
+      id="recoveryModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="recovery-form">
+            <div class="modal-header">
+              <h5 class="modal-title d-flex align-items-center">
+                <i class="bi bi-shield-lock fs-3 me-2"></i> Thiết lập mật khẩu
+                mới
+              </h5>
+            </div>
+            <div class="modal-body">
+              <div class="mb-4">
+                <label class="form-label">Mật khẩu mới</label>
+                <input
+                  type="password"
+                  name="pass"
+                  required=""
+                  class="form-control shadow-none"
+                />
+                <input type="hidden" name="email" />
+                <input type="hidden" name="token" />
+              </div>
+              <div class="mb-2 text-end">
+                <button
+                  type="button"
+                  class="btn shadow-none me-2"
+                  data-bs-dismiss="modal"
+                >
+                  HUỶ
+                </button>
+                <button type="submit" class="btn btn-dark shadow-none">
+                  XÁC NHẬN
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-white mt-5">
+      <div class="row">
+        <div class="col-lg-4 p-4">
+          <h3 class="h-font fw-bold fs-3 mb-2">Homestay</h3>
+          <p>Homestay không chỉ là một nơi nghỉ ngơi, mà còn mang đến cho du khách cơ hội hòa mình vào cuộc sống địa phương, khám phá văn hóa và ẩm thực bản xứ một cách chân thực nhất.  </p>
+          <p>Không gian gần gũi, thân thiện cùng sự hiếu khách của chủ nhà giúp du khách cảm nhận sự thoải mái và ấm cúng như đang ở chính ngôi nhà của mình.</p>
+          <p>Homestay mang lại cảm giác gần gũi với thiên nhiên, kết nối con người với văn hóa và cuộc sống địa phương, giúp mỗi chuyến đi trở nên đáng nhớ hơn bao giờ hết.  </p>  
+    </div>
+        <div class="col-lg-4 p-4">
+          <h5 class="mb-3">Links</h5>
+          <a
+            href="index.php"
+            class="d-inline-block mb-2 text-dark text-decoration-none"
+            >Trang Chủ</a
+          >
+          <br />
+          <a
+            href="rooms.php"
+            class="d-inline-block mb-2 text-dark text-decoration-none"
+            >Phòng</a
+          >
+          <br />
+          <a
+            href="facilities.php"
+            class="d-inline-block mb-2 text-dark text-decoration-none"
+            >Tiện Nghi</a
+          >
+          <br />
+          <a
+            href="contact.php"
+            class="d-inline-block mb-2 text-dark text-decoration-none"
+            >Liên Hệ</a
+          >
+          <br />
+          <a
+            href="about.php"
+            class="d-inline-block mb-2 text-dark text-decoration-none"
+            >Giới Thiệu</a
+          >
+        </div>
+        <div class="col-lg-4 p-4">
+          <h5 class="mb-3">Theo dõi ngay</h5>
+          <a
+            href="https://www.facebook.com/"
+            class="d-inline-block text-dark text-decoration-none mb-2"
+          >
+            <i class="bi bi-facebook me-1"></i> Facebook </a
+          ><br />
+          <a
+            href="https://www.facebook.com/"
+            class="d-inline-block text-dark text-decoration-none"
+          >
+            <i class="bi bi-instagram me-1"></i> Instagram </a
+          ><br />
+        </div>
+      </div>
+    </div>
+
+    <h6 class="text-center bg-dark text-white p-3 m-0">
+      Đặt Phòng Khách Sạn - @2023 Quang Huy
+    </h6>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function alert(type, msg, position = "body") {
+        let bs_class = type == "success" ? "alert-success" : "alert-danger";
+        let element = document.createElement("div");
+        element.innerHTML = `
+        <div class="alert ${bs_class} alert-dismissible fade show" role="alert">
+          <strong class="me-3">${msg}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      `;
+
+        if (position == "body") {
+          document.body.append(element);
+          element.classList.add("custom-alert");
+        } else {
+          document.getElementById(position).appendChild(element);
+        }
+        setTimeout(remAlert, 3000);
+      }
+
+      function remAlert() {
+        document.getElementsByClassName("alert")[0].remove();
+      }
+
+      function setActive() {
+        let navbar = document.getElementById("nav-bar");
+        let a_tags = navbar.getElementsByTagName("a");
+
+        for (i = 0; i < a_tags.length; i++) {
+          let file = a_tags[i].href.split("/").pop();
+          let file_name = file.split(".")[0];
+
+          if (document.location.href.indexOf(file_name) >= 0) {
+            a_tags[i].classList.add("active");
+          }
+        }
+      }
+
+      let register_form = document.getElementById("register-form");
+
+      register_form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let data = new FormData();
+
+        data.append("name", register_form.elements["name"].value);
+        data.append("email", register_form.elements["email"].value);
+        data.append("phonenum", register_form.elements["phonenum"].value);
+        data.append("address", register_form.elements["address"].value);
+        data.append("pincode", register_form.elements["pincode"].value);
+        data.append("dob", register_form.elements["dob"].value);
+        data.append("pass", register_form.elements["pass"].value);
+        data.append("cpass", register_form.elements["cpass"].value);
+        data.append("profile", register_form.elements["profile"].files[0]);
+        data.append("register", "");
+
+        var myModal = document.getElementById("registerModal");
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/login_register.php", true);
+
+        xhr.onload = function () {
+          if (this.responseText == "pass_mismatch") {
+            alert("error", "Mật khẩu không khớp!");
+          } else if (this.responseText == "email_already") {
+            alert("error", "Email đã được đăng ký!");
+          } else if (this.responseText == "phone_already") {
+            alert("error", "Số điện thoại đã được đăng ký!");
+          } else if (this.responseText == "inv_img") {
+            alert("error", "Chỉ cho phép hình ảnh JPG, WEBP & PNG!");
+          } else if (this.responseText == "upd_failed") {
+            alert("error", "Tải lên hình ảnh không thành công!");
+          } else if (this.responseText == "mail_failed") {
+            alert(
+              "error",
+              "Không thể gửi email xác nhận! Máy chủ ngừng hoạt động!"
+            );
+          } else if (this.responseText == "ins_failed") {
+            alert(
+              "error",
+              "Đăng ký không thành công! Máy chủ ngừng hoạt động!"
+            );
+          } else {
+            alert(
+              "success",
+              "Đăng ký thành công. Liên kết xác nhận được gửi đến email!"
+            );
+            register_form.reset();
+          }
+        };
+
+        xhr.send(data);
+      });
+
+      let login_form = document.getElementById("login-form");
+
+      login_form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let data = new FormData();
+
+        data.append("email_mob", login_form.elements["email_mob"].value);
+        data.append("pass", login_form.elements["pass"].value);
+        data.append("login", "");
+
+        var myModal = document.getElementById("loginModal");
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/login_register.php", true);
+
+        xhr.onload = function () {
+          if (this.responseText == "inv_email_mob") {
+            alert("error", "Email hoặc số di động không hợp lệ!");
+          } else if (this.responseText == "not_verified") {
+            alert("error", "Email chưa được xác minh!");
+          } else if (this.responseText == "inactive") {
+            alert(
+              "error",
+              "Toàn khoản bị khoá! Vui lòng liên hệ Quản trị viên."
+            );
+          } else if (this.responseText == "invalid_pass") {
+            alert("error", "Mật khẩu không đúng!");
+          } else {
+            
+            let fileurl = window.location.href
+              .split("/")
+              .pop()
+              .split("?")
+              .shift();
+            if (fileurl == "room_details.php") {
+              window.location = window.location.href;
+            } else {
+              window.location = window.location.pathname;
+            }
+          }
+        };
+
+        xhr.send(data);
+      });
+
+      let forgot_form = document.getElementById("forgot-form");
+
+      forgot_form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let data = new FormData();
+
+        data.append("email", forgot_form.elements["email"].value);
+        data.append("forgot_pass", "");
+
+        var myModal = document.getElementById("forgotModal");
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/login_register.php", true);
+
+        xhr.onload = function () {
+          if (this.responseText == "inv_email") {
+            alert("error", "Email không hợp lệ !");
+          } else if (this.responseText == "not_verified") {
+            alert(
+              "error",
+              "Email chưa được xác minh! Vui lòng liên hệ Quản trị viên"
+            );
+          } else if (this.responseText == "inactive") {
+            alert(
+              "error",
+              "Toàn khoản bị đình chỉ! Vui lòng liên hệ Quản trị viên."
+            );
+          } else if (this.responseText == "mail_failed") {
+            alert("error", "Không thể gửi email. Máy chủ ngừng hoạt động!");
+          } else if (this.responseText == "upd_failed") {
+            alert(
+              "error",
+              "Khôi phục tài khoản không thành công. Máy chủ ngừng hoạt động!"
+            );
+          } else {
+            alert("success", "Đặt lại liên kết được gửi đến email!");
+            forgot_form.reset();
+          }
+        };
+
+        xhr.send(data);
+      });
+
+      function checkLoginToBook(status, room_id) {
+        if (status) {
+          window.location.href = "confirm_booking.php?id=" + room_id;
+        } else {
+          alert("error", "Vui lòng đăng nhập để đặt phòng!");
+        }
+      }
+
+      setActive();
+    </script>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+      });
+
+      var swiper = new Swiper(".swiper-testimonials", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        slidesPerView: "3",
+        loop: true,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+
+
+      let recovery_form = document.getElementById("recovery-form");
+
+      recovery_form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let data = new FormData();
+
+        data.append("email", recovery_form.elements["email"].value);
+        data.append("token", recovery_form.elements["token"].value);
+        data.append("pass", recovery_form.elements["pass"].value);
+        data.append("recover_user", "");
+
+        var myModal = document.getElementById("recoveryModal");
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/login_register.php", true);
+
+        xhr.onload = function () {
+          if (this.responseText == "failed") {
+            alert("error", "Đặt lại tài khoản không thành công!");
+          } else {
+            alert("success", "Đặt lại tài khoản thành công!");
+            recovery_form.reset();
+          }
+        };
+
+        xhr.send(data);
+      });
+    </script>
+
+    <div id="veepn-guard-alert"></div>
+    <style>
+      @font-face {
+        font-family: FigtreeVF;
+        src: url(chrome-extension://panammoooggmlehahpcjckcncfeffcoi/fonts/FigtreeVF.woff2)
+            format("woff2 supports variations"),
+          url(chrome-extension://panammoooggmlehahpcjckcncfeffcoi/fonts/FigtreeVF.woff2)
+            format("woff2-variations");
+        font-weight: 100 1000;
+        font-display: swap;
+      }
+    </style>
+    <div id="veepn-breach-alert"></div>
+    <style>
+      @font-face {
+        font-family: FigtreeVF;
+        src: url(chrome-extension://panammoooggmlehahpcjckcncfeffcoi/fonts/FigtreeVF.woff2)
+            format("woff2 supports variations"),
+          url(chrome-extension://panammoooggmlehahpcjckcncfeffcoi/fonts/FigtreeVF.woff2)
+            format("woff2-variations");
+        font-weight: 100 1000;
+        font-display: swap;
+      }
+    </style>
+  </body>
 </html>
