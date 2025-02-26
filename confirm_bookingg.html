@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/common.css">
+  
+    <title>Vinh Hotel - CONFIRM BOOKING</title>
+    <style>
+      .button-disabled {
+        background-color: #77d7c9; 
+        color: #999;
+        cursor: not-allowed; 
+        pointer-events: none;
+      }
+  
+    </style>
+  </head>
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-12 my-5 mb-4 px-4">
+          <h2 class="fw-bold">XÁC NHẬN ĐẶT PHÒNG</h2>
+          <div style="font-size: 14px;">
+            <a href="index.php" class="text-secondary text-decoration-none">TRANG CHỦ</a>
+            <span class="text-secondary"> &gt; </span>
+            <a href="rooms.php" class="text-secondary text-decoration-none">PHÒNG</a>
+            <span class="text-secondary"> &gt; </span>
+            <a href="#" class="text-secondary text-decoration-none">XÁC NHẬN</a>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-12 px-4">
+            <div class="card p-3 shadow-sm rounded">
+      <img src="img/IMG_25983.png" class="img-fluid rounded mb-3">
+      <h5>Phòng Bình Dân</h5>png
+      <h6>800000 vnđ</h6>
+    </div>      </div>
+  
+        <div class="col-lg-5 col-md-12 px-4">
+          <div class="card mb-4 border-0 shadow-sm rounded-3">
+            <div class="card-body">
+              <form action="pay_now.php" method="POST" id="booking_form">
+                <h6 class="mb-3">CHI TIẾT PHÒNG ĐẶT</h6>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Tên</label>
+                    <input name="name" type="text" value="Lê Thị Thủy" class="form-control shadow-none" required="">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Số Điện Thoại</label>
+                    <input name="phonenum" type="number" value="0877953668" class="form-control shadow-none" required="">
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <label class="form-label">Địa Chỉ</label>
+                    <textarea name="address" class="form-control shadow-none" rows="1" required="">adfasdf</textarea>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Ngày Nhận Phòng</label>
+                    <input name="checkin" onchange="check_availability()" type="date" class="form-control shadow-none" required="">
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label class="form-label">Ngày Trả Phòng</label>
+                    <input name="checkout" onchange="check_availability()" type="date" class="form-control shadow-none" required="">
+                  </div>
+                  <div class="col-12">
+                    <div class="spinner-border text-info mb-3 d-none" id="info_loader" role="status">
+                      <span class="visually-hidden">Đang Tải ...</span>
+                    </div>
+                    <h6 class="mb-3 text-danger" id="pay_info">Cung cấp ngày nhận phòng và trả phòng!</h6>
+                    <h6 class="mb-3 text-danger" id="pay_info"></h6>
+                    <button id="book-now" name="pay_now" class="btn w-100 text-white custom-bg shadow-none mb-1" disabled="">Đặt Ngay</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+    <div class="container-fluid bg-white mt-5">
+    <div class="row">
+      <div class="col-lg-4 p-4">
+        <h3 class="h-font fw-bold fs-3 mb-2">Vinh Hotel</h3>
+        <p>
+          Khách sạn Vinh Hotel là một trong những khách sạn hàng đầu tại Việt Nam, được thiết kế theo phong cách hiện đại và đầy đủ tiện nghi, với hệ thống phòng nghỉ sang trọng, nhà hàng, quầy bar, trung tâm thể dục và spa. Khách sạn có hơn 50 tầng      </p>
+      </div>
+      <div class="col-lg-4 p-4">
+        <h5 class="mb-3">Links</h5>
+        <a href="index.php" class="d-inline-block mb-2 text-dark text-decoration-none">Trang Chủ</a> <br>
+        <a href="rooms.php" class="d-inline-block mb-2 text-dark text-decoration-none">Phòng</a> <br>
+        <a href="facilities.php" class="d-inline-block mb-2 text-dark text-decoration-none">Tiện Nghi</a> <br>
+        <a href="contact.php" class="d-inline-block mb-2 text-dark text-decoration-none">Liên Hệ</a> <br>
+        <a href="about.php" class="d-inline-block mb-2 text-dark text-decoration-none">Giới Thiệu</a>
+      </div>
+      <div class="col-lg-4 p-4">
+          <h5 class="mb-3">Theo dõi ngay</h5>
+                  <a href="https://www.facebook.com/" class="d-inline-block text-dark text-decoration-none mb-2">
+            <i class="bi bi-facebook me-1"></i> Facebook
+          </a><br>
+          <a href="https://www.facebook.com/" class="d-inline-block text-dark text-decoration-none">
+            <i class="bi bi-instagram me-1"></i> Instagram
+          </a><br>
+      </div>
+    </div>
+  </div>
+  <h6 class="text-center bg-dark text-white p-3 m-0">Đặt Phòng Khách Sạn - @2023 Quang Huy</h6>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+  <script>
+  
+    function alert(type,msg,position='body')
+    {
+      let bs_class = (type == 'success') ? 'alert-success' : 'alert-danger';
+      let element = document.createElement('div');
+      element.innerHTML = `
+        <div class="alert ${bs_class} alert-dismissible fade show" role="alert">
+          <strong class="me-3">${msg}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      `;
+  
+      if(position=='body'){
+        document.body.append(element);
+        element.classList.add('custom-alert');
+      }
+      else{
+        document.getElementById(position).appendChild(element);
+      }
+      setTimeout(remAlert, 3000);
+    }
+  
+    function remAlert(){
+      document.getElementsByClassName('alert')[0].remove();
+    }
+  
+    function setActive()
+    {
+      let navbar = document.getElementById('nav-bar');
+      let a_tags = navbar.getElementsByTagName('a');
+  
+      for(i=0; i<a_tags.length; i++)
+      {
+        let file = a_tags[i].href.split('/').pop();
+        let file_name = file.split('.')[0];
+  
+        if(document.location.href.indexOf(file_name) >= 0){
+          a_tags[i].classList.add('active');
+        }
+      }
+    }
+    let register_form = document.getElementById('register-form');
+    register_form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      let data = new FormData();
+      data.append('name',register_form.elements['name'].value);
+      data.append('email',register_form.elements['email'].value);
+      data.append('phonenum',register_form.elements['phonenum'].value);
+      data.append('address',register_form.elements['address'].value);
+      data.append('pincode',register_form.elements['pincode'].value);
+      data.append('dob',register_form.elements['dob'].value);
+      data.append('pass',register_form.elements['pass'].value);
+      data.append('cpass',register_form.elements['cpass'].value);
+      data.append('profile',register_form.elements['profile'].files[0]);
+      data.append('register','');
+      var myModal = document.getElementById('registerModal');
+      var modal = bootstrap.Modal.getInstance(myModal);
+      modal.hide();
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST","ajax/login_register.php",true);
+      xhr.onload = function(){
+        if(this.responseText == 'pass_mismatch'){
+          alert('error',"Mật khẩu không khớp!");
+        }
+        else if(this.responseText == 'email_already'){
+          alert('error',"Email đã được đăng ký!");
+        }
+        else if(this.responseText == 'phone_already'){
+          alert('error',"Số điện thoại đã được đăng ký!");
+        }
+        else if(this.responseText == 'inv_img'){
+          alert('error',"Chỉ cho phép hình ảnh JPG, WEBP & PNG!");
+        }
+        else if(this.responseText == 'upd_failed'){
+          alert('error',"Tải lên hình ảnh không thành công!");
+        }
+        else if(this.responseText == 'mail_failed'){
+          alert('error',"Không thể gửi email xác nhận! Máy chủ ngừng hoạt động!");
+        }
+        else if(this.responseText == 'ins_failed'){
+          alert('error',"Đăng ký không thành công! Máy chủ ngừng hoạt động!");
+        }
+        else{
+          alert('success',"Đăng ký thành công. Liên kết xác nhận được gửi đến email!");
+          register_form.reset();
+        }
+      }
+  
+      xhr.send(data);
+    });
+  
+    let login_form = document.getElementById('login-form');
+  
+    login_form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+  
+      let data = new FormData();
+  
+      data.append('email_mob',login_form.elements['email_mob'].value);
+      data.append('pass',login_form.elements['pass'].value);
+      data.append('login','');
+  
+      var myModal = document.getElementById('loginModal');
+      var modal = bootstrap.Modal.getInstance(myModal);
+      modal.hide();
+  
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST","ajax/login_register.php",true);
+  
+      xhr.onload = function(){
+        if(this.responseText == 'inv_email_mob'){
+          alert('error',"Email hoặc số di động không hợp lệ!");
+        }
+        else if(this.responseText == 'not_verified'){
+          alert('error',"Email chưa được xác minh!");
+        }
+        else if(this.responseText == 'inactive'){
+          alert('error',"Toàn khoản bị khoá! Vui lòng liên hệ Quản trị viên.");
+        }
+        else if(this.responseText == 'invalid_pass'){
+          alert('error',"Mật khẩu không đúng!");
+        }
+        else{
+          //khởi tạo biến "fileurl" để lưu đường dẫn hiện tại của trang. Đường dẫn này được chia thành nhiều phần bằng dấu "/".
+          // Hàm "split()" được sử dụng để chia đường dẫn thành các phần dựa trên dấu "/". Sau đó, ".pop()" được sử dụng để lấy ra phần tử cuối cùng của mảng,
+          //nghĩa là tên file của trang hiện tại. Sau đó, ".split('?')" được sử dụng để tách đường dẫn và các tham số của URL. ".shift()" được sử dụng để lấy phần tử đầu tiên của mảng
+          let fileurl = window.location.href.split('/').pop().split('?').shift();
+          if(fileurl == 'room_details.php'){
+            window.location = window.location.href;
+          }
+          else{
+            window.location = window.location.pathname;
+          }
+        }
+      }
+  
+      xhr.send(data);
+    });
+  
+    let forgot_form = document.getElementById('forgot-form');
+  
+    forgot_form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+  
+      let data = new FormData();
+  
+      data.append('email',forgot_form.elements['email'].value);
+      data.append('forgot_pass','');
+  
+      var myModal = document.getElementById('forgotModal');
+      var modal = bootstrap.Modal.getInstance(myModal);
+      modal.hide();
+  
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST","ajax/login_register.php",true);
+  
+      xhr.onload = function(){
+        if(this.responseText == 'inv_email'){
+          alert('error',"Email không hợp lệ !");
+        }
+        else if(this.responseText == 'not_verified'){
+          alert('error',"Email chưa được xác minh! Vui lòng liên hệ Quản trị viên");
+        }
+        else if(this.responseText == 'inactive'){
+          alert('error',"Toàn khoản bị đình chỉ! Vui lòng liên hệ Quản trị viên.");
+        }
+        else if(this.responseText == 'mail_failed'){
+          alert('error',"Không thể gửi email. Máy chủ ngừng hoạt động!");
+        }
+        else if(this.responseText == 'upd_failed'){
+          alert('error',"Khôi phục tài khoản không thành công. Máy chủ ngừng hoạt động!");
+        }
+        else{
+          alert('success',"Đặt lại liên kết được gửi đến email!");
+          forgot_form.reset();
+        }
+      }
+  
+      xhr.send(data);
+    });
+  
+    function checkLoginToBook(status,room_id){
+      if(status){
+        window.location.href='confirm_booking.php?id='+room_id;
+      }
+      else{
+        alert('error','Vui lòng đăng nhập để đặt phòng!');
+      }
+    }
+    setActive();
+  </script>  <script>
+      let booking_form = document.getElementById('booking_form');
+      let info_loader = document.getElementById('info_loader');
+      let pay_info = document.getElementById('pay_info');
+  
+      function check_availability() {
+        let checkin_val = booking_form.elements['checkin'].value;
+        let checkout_val = booking_form.elements['checkout'].value;
+  
+        booking_form.elements['pay_now'].setAttribute('disabled', true);
+  
+        if (checkin_val != '' && checkout_val != '') {
+          pay_info.classList.add('d-none');
+          pay_info.classList.replace('text-dark', 'text-danger');
+          info_loader.classList.remove('d-none');
+  
+          let data = new FormData();
+  
+          data.append('check_availability', '');
+          data.append('check_in', checkin_val);
+          data.append('check_out', checkout_val);
+  
+          let xhr = new XMLHttpRequest();
+          xhr.open("POST", "ajax/confirm_booking.php", true);
+  
+          xhr.onload = function() {
+            let data = JSON.parse(this.responseText);
+  
+            if (data.status == 'check_in_out_equal') {
+              pay_info.innerText = "Bạn không thể trả phòng trong cùng một ngày!";
+            } else if (data.status == 'check_out_earlier') {
+              pay_info.innerText = "Ngày trả phòng sớm hơn ngày nhận phòng!";
+            } else if (data.status == 'check_in_earlier') {
+              pay_info.innerText = "Ngày nhận phòng sớm hơn ngày hôm nay!";
+            } else if (data.status == 'unavailable') {
+              pay_info.innerText = "Đã hết phòng cho ngày đặt phòng này!";
+            } else {
+              pay_info.innerHTML = "Số Phòng Trống: " + data.c_rooms + "<br>Số ngày Đặt: " + data.days + "<br>Tổng số tiền phải trả: " + data.payment + ' vnđ';
+              // pay_info.innerHTML = "Số lượng: " + data.ppp + ' ppp';
+              // pay_info.innerHTML = "Số lượng T: " + data.kk + ' ppp';
+              pay_info.classList.replace('text-danger', 'text-dark');
+              booking_form.elements['pay_now'].removeAttribute('disabled');
+            }
+  
+            pay_info.classList.remove('d-none');
+            info_loader.classList.add('d-none');
+          }
+          xhr.send(data);
+        }
+  
+      }
+    </script>
+  </body>
+  </html>
