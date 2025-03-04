@@ -1,7 +1,7 @@
 <?php 
 
 
-  define('SITE_URL','http://localhost:/homestay/');
+  define('SITE_URL','http://localhost:/test/');
   define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
   define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
   define('FACILITIES_IMG_PATH',SITE_URL.'images/facilities/');
