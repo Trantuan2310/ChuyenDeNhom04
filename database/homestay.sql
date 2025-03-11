@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2025 at 03:01 AM
+-- Generation Time: Mar 11, 2025 at 02:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,7 +38,7 @@ CREATE TABLE `admin_cred` (
 --
 
 INSERT INTO `admin_cred` (`sr_no`, `admin_name`, `admin_pass`) VALUES
-(2, 'tuan', '1234');
+(2, 'ABC', '1234');
 
 -- --------------------------------------------------------
 
@@ -63,10 +63,7 @@ CREATE TABLE `booking_details` (
 --
 
 INSERT INTO `booking_details` (`sr_no`, `booking_id`, `room_name`, `price`, `total_pay`, `room_no`, `user_name`, `phonenum`, `address`) VALUES
-(113, 114, 'Phòng VIP 1', 1000000, 3000000, NULL, 'Nguyễn Văn A', '0123456789', 'ABC'),
-(114, 115, 'Phòng Vip 2', 1200000, 3600000, NULL, 'Nguyễn Văn A', '0123456789', 'ABC'),
-(115, 116, 'Phòng Vip 3', 1500000, 10500000, NULL, 'Nguyễn Văn A', '0123456789', 'ABC'),
-(116, 117, 'Phòng Vip 3', 1500000, 4500000, NULL, 'Nguyễn Văn A', '0123456789', 'ABC');
+(117, 118, 'Phòng Bình Dân', 800000, 8000000, NULL, 'Nguyễn Văn A', '0123456789', 'A');
 
 -- --------------------------------------------------------
 
@@ -98,23 +95,9 @@ CREATE TABLE `booking_order` (
 
 INSERT INTO `booking_order` (`booking_id`, `user_id`, `room_id`, `check_in`, `check_out`, `arrival`, `refund`, `booking_status`, `order_id`, `trans_id`, `trans_amt`, `trans_status`, `trans_resp_msg`, `rate_review`, `datentime`) VALUES
 (100, 9, 3, '2023-05-13', '2023-05-19', 1, NULL, 'Đã Thanh Toán', 'ORD_9554729', NULL, 4800000, 'TXN_SUCCESS', NULL, 1, '2023-05-13 15:39:59'),
-(101, 9, 3, '2023-05-13', '2023-05-20', 0, 0, 'Đã Huỷ', 'ORD_91676809', NULL, 0, 'Đã Đặt', NULL, NULL, '2023-05-13 15:40:38'),
-(102, 9, 6, '2023-05-10', '2023-05-14', 0, NULL, 'Đã Xác Nhận Đặt Phòng', 'ORD_95687526', NULL, 0, 'Đã Đặt', NULL, NULL, '2023-05-14 05:33:26'),
-(103, 9, 3, '2023-05-14', '2023-05-20', 0, 0, 'Đã Huỷ', 'ORD_96612782', NULL, 0, 'Đã Đặt', NULL, NULL, '2023-05-14 06:59:30'),
-(104, 9, 6, '2023-05-14', '2023-05-16', 0, 0, 'Đã Huỷ', 'ORD_91367634', NULL, 0, 'Đã Đặt', NULL, NULL, '2023-05-14 09:54:35'),
 (105, 9, 6, '2023-05-14', '2023-05-17', 1, NULL, 'Đã Thanh Toán', 'ORD_91493479', NULL, 4500000, 'TXN_SUCCESS', NULL, 1, '2023-05-14 10:43:24'),
-(106, 9, 8, '2023-05-15', '2023-05-20', 0, NULL, 'Đã Xác Nhận Đặt Phòng', 'ORD_91032898', NULL, 0, 'Đã Đặt', NULL, NULL, '2023-05-15 19:12:10'),
-(107, 9, 8, '2023-05-15', '2023-05-20', 0, NULL, 'Đã Đặt', 'ORD_92583238', NULL, 0, 'Đã Đặt', NULL, NULL, '2023-05-15 19:12:24'),
-(108, 9, 8, '2025-03-03', '2025-03-05', 0, 0, 'Đã Huỷ', 'ORD_96107258', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-03 19:42:20'),
-(109, 9, 8, '2025-03-03', '2025-03-06', 0, 0, 'Đã Huỷ', 'ORD_95072906', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-03 23:51:12'),
-(110, 9, 8, '2025-03-03', '2025-03-05', 0, NULL, 'Đã Xác Nhận Đặt Phòng', 'ORD_98445030', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-03 23:52:07'),
-(111, 9, 8, '2025-03-09', '2025-03-20', 0, 0, 'Đã Huỷ', 'ORD_91513650', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-04 01:11:18'),
-(112, 9, 3, '2025-03-05', '2025-03-27', 0, 0, 'Đã Huỷ', 'ORD_9836990', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-04 01:56:37'),
-(113, 9, 5, '2025-03-04', '2025-03-06', 0, 0, 'Đã Huỷ', 'ORD_92012064', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-04 07:49:43'),
 (114, 9, 4, '2025-03-04', '2025-03-07', 1, NULL, 'Đã Thanh Toán', 'ORD_95953755', NULL, 3000000, 'TXN_SUCCESS', NULL, 1, '2025-03-04 07:54:34'),
-(115, 9, 5, '2025-03-04', '2025-03-07', 0, NULL, 'Đã Xác Nhận Đặt Phòng', 'ORD_94060943', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-04 07:59:30'),
-(116, 9, 6, '2025-03-04', '2025-03-11', 0, NULL, 'Đã Đặt', 'ORD_95092450', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-04 07:59:51'),
-(117, 9, 6, '2025-03-04', '2025-03-07', 0, NULL, 'Đã Đặt', 'ORD_92645588', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-04 08:07:43');
+(118, 9, 3, '2025-03-10', '2025-03-20', 0, 0, 'Đã Huỷ', 'ORD_98476385', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-10 22:12:15');
 
 -- --------------------------------------------------------
 
@@ -260,12 +243,12 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `name`, `area`, `price`, `quantity`, `adult`, `children`, `description`, `status`, `removed`) VALUES
-(3, 'Phòng Bình Dân', 30, 800000, 4, 5, 3, 'Các tiện nghi trong phòng khách sạn bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 0),
-(4, 'Phòng VIP 1', 40, 1000000, 3, 5, 5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptate vero sed tempore illo atque beatae asperiores, adipisci dicta quia nisi voluptates impedit perspiciatis, nobis libero culpa error officiis totam?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptate vero sed tempore illo atque beatae asperiores, adipisci dic', 1, 0),
-(5, 'Phòng Vip 2', 40, 1200000, 3, 8, 6, 'Các tiện nghi trong phòng khách sạn bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 0),
-(6, 'Phòng Vip 3', 50, 1500000, 7, 9, 10, 'Các tiện nghi trong phòng khách sạn bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 0),
-(7, 'Phòng Đơn', 20, 800000, 2, 2, 2, 'phòng rộng rãi', 1, 1),
-(8, 'Phòng Đơn', 20, 500000, 2, 2, 2, 'rộng rãi thoáng mát', 1, 0);
+(3, 'Phòng Bình Dân', 30, 800000, 4, 5, 3, 'Các tiện nghi trong phòng bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 0),
+(4, 'Phòng VIP 1', 40, 1000000, 3, 5, 5, 'Các tiện nghi trong phòng bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 0),
+(5, 'Phòng Vip 2', 40, 1200000, 3, 8, 6, 'Các tiện nghi trong phòng bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 0),
+(6, 'Phòng Vip 3', 50, 1500000, 7, 9, 10, 'Các tiện nghi trong phòng bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 0),
+(7, 'Phòng Đơn', 20, 800000, 2, 2, 2, 'Các tiện nghi trong phòng bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 1),
+(8, 'Phòng Đơn', 20, 500000, 2, 2, 2, 'Các tiện nghi trong phòng bao gồm các ghế sofa và bàn, tivi màn hình phẳng, minibar, két sắt, điều hòa, máy sưởi, hệ thống chiếu sáng, tủ quần áo và giường ngủ thoải mái.', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -419,7 +402,7 @@ CREATE TABLE `user_cred` (
 --
 
 INSERT INTO `user_cred` (`id`, `name`, `email`, `address`, `phonenum`, `pincode`, `dob`, `profile`, `password`, `is_verified`, `token`, `t_expire`, `status`, `datentime`) VALUES
-(9, 'Nguyễn Văn A', 'abc@gmail.com', 'ABC', '0123456789', 460000, '2003-01-01', 'IMG_17954.png', '$2y$10$B8Rng08pFoqaIv8LxliqOe8RKtM5a0EoaAd0WDZNK1j9lO1D5tm/a', 1, NULL, NULL, 1, '2025-02-28 14:32:35');
+(9, 'Nguyễn Văn A', 'abc@gmail.com', 'A', '0123456789', 100, '2003-01-01', 'IMG_68598.png', '$2y$10$PeMmLCaf8.MMzaKDttGnXemKlcJnn1ppyGJlRZPG/0zB2Y5t1Ngv2', 1, NULL, NULL, 1, '2025-02-28 14:32:35');
 
 -- --------------------------------------------------------
 
@@ -570,13 +553,13 @@ ALTER TABLE `admin_cred`
 -- AUTO_INCREMENT for table `booking_details`
 --
 ALTER TABLE `booking_details`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT for table `booking_order`
 --
 ALTER TABLE `booking_order`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `carousel`
@@ -648,7 +631,7 @@ ALTER TABLE `team_details`
 -- AUTO_INCREMENT for table `user_cred`
 --
 ALTER TABLE `user_cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user_queries`

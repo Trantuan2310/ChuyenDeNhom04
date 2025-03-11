@@ -57,7 +57,7 @@
                 <input name="dob" type="date" value="<?php echo $u_fetch['dob'] ?>" class="form-control shadow-none" required>
               </div>
               <div class="col-md-4 mb-3">
-                <label class="form-label">Mã Zip</label>
+                <label class="form-label">Mã Tỉnh</label>
                 <input name="pincode" type="number" value="<?php echo $u_fetch['pincode'] ?>" class="form-control shadow-none" required>
               </div>
               <div class="col-md-8 mb-4">
@@ -131,13 +131,16 @@
 
       xhr.onload = function(){
         if(this.responseText == 'phone_already'){
-          alert('error',"Phone number is already registered!");
+          alert('error',"Số điện thoại đã được đăng ký!");
+        }
+        else if(this.responseText == 'invalid_phone'){
+          alert('error',"Số điện thoại không hợp lệ!");
         }
         else if(this.responseText == 0){
-          alert('error',"No Changes Made!");
+          alert('error',"Không có thay đổi!");
         }
         else{
-          alert('success','Changes saved!');
+          alert('success','Lưu thay đổi!');
         }
       }
 
@@ -161,13 +164,13 @@
       xhr.onload = function()
       {
         if(this.responseText == 'inv_img'){
-          alert('error',"Only JPG, WEBP & PNG images are allowed!");
+          alert('error',"Chỉ cho phép hình ảnh JPG, WEBP & PNG!");
         }
         else if(this.responseText == 'upd_failed'){
-          alert('error',"Image upload failed!");
+          alert('error',"Tải lên hình ảnh không thành công!");
         }
         else if(this.responseText == 0){
-          alert('error',"Updation failed!");
+          alert('error',"Cập nhật không thành công!");
         }
         else{
           window.location.href=window.location.pathname;
@@ -187,7 +190,7 @@
       let confirm_pass = pass_form.elements['confirm_pass'].value;
 
       if(new_pass!=confirm_pass){
-        alert('error','Password do not match!');
+        alert('error','Mật khẩu không khớp!');
         return false;
       }
 
@@ -203,13 +206,13 @@
       xhr.onload = function()
       {
         if(this.responseText == 'mismatch'){
-          alert('error',"Password do not match!");
+          alert('error',"Mật khẩu không khớp!");
         }
         else if(this.responseText == 0){
-          alert('error',"Updation failed!");
+          alert('error',"Cập nhật không thành công!");
         }
         else{
-          alert('success','Changes saved!');
+          alert('success','Lưu thay đổi!');
           pass_form.reset();
         }
       }
