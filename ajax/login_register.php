@@ -27,7 +27,7 @@ if (isset($_POST['register'])) {
     $u_exist_fetch = mysqli_fetch_assoc($u_exist);
     echo ($u_exist_fetch['email'] == $data['email']) ? 'email_already' : 'phone_already';
     exit;
-  }
+  } 
 
   $img = uploadUserImage($_FILES['profile']);
 
@@ -76,4 +76,3 @@ if (isset($_POST['login'])) {
     }
   }
 }
-
