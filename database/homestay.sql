@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2025 at 02:46 AM
+-- Generation Time: Mar 17, 2025 at 03:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,7 +38,7 @@ CREATE TABLE `admin_cred` (
 --
 
 INSERT INTO `admin_cred` (`sr_no`, `admin_name`, `admin_pass`) VALUES
-(2, 'ABC', '1234');
+(4, 'homestay', '1234');
 
 -- --------------------------------------------------------
 
@@ -57,13 +57,6 @@ CREATE TABLE `booking_details` (
   `phonenum` varchar(100) NOT NULL,
   `address` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `booking_details`
---
-
-INSERT INTO `booking_details` (`sr_no`, `booking_id`, `room_name`, `price`, `total_pay`, `room_no`, `user_name`, `phonenum`, `address`) VALUES
-(117, 118, 'Phòng Bình Dân', 800000, 8000000, NULL, 'Nguyễn Văn A', '0123456789', 'A');
 
 -- --------------------------------------------------------
 
@@ -88,16 +81,6 @@ CREATE TABLE `booking_order` (
   `rate_review` int(11) DEFAULT NULL,
   `datentime` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `booking_order`
---
-
-INSERT INTO `booking_order` (`booking_id`, `user_id`, `room_id`, `check_in`, `check_out`, `arrival`, `refund`, `booking_status`, `order_id`, `trans_id`, `trans_amt`, `trans_status`, `trans_resp_msg`, `rate_review`, `datentime`) VALUES
-(100, 9, 3, '2023-05-13', '2023-05-19', 1, NULL, 'Đã Thanh Toán', 'ORD_9554729', NULL, 4800000, 'TXN_SUCCESS', NULL, 1, '2023-05-13 15:39:59'),
-(105, 9, 6, '2023-05-14', '2023-05-17', 1, NULL, 'Đã Thanh Toán', 'ORD_91493479', NULL, 4500000, 'TXN_SUCCESS', NULL, 1, '2023-05-14 10:43:24'),
-(114, 9, 4, '2025-03-04', '2025-03-07', 1, NULL, 'Đã Thanh Toán', 'ORD_95953755', NULL, 3000000, 'TXN_SUCCESS', NULL, 1, '2025-03-04 07:54:34'),
-(118, 9, 3, '2025-03-10', '2025-03-20', 0, 0, 'Đã Huỷ', 'ORD_98476385', NULL, 0, 'Đã Đặt', NULL, NULL, '2025-03-10 22:12:15');
 
 -- --------------------------------------------------------
 
@@ -209,15 +192,6 @@ CREATE TABLE `rating_review` (
   `seen` int(11) NOT NULL DEFAULT 0,
   `datentime` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `rating_review`
---
-
-INSERT INTO `rating_review` (`sr_no`, `booking_id`, `room_id`, `user_id`, `rating`, `review`, `seen`, `datentime`) VALUES
-(15, 100, 3, 9, 5, 'Good', 0, '2025-03-03 19:42:36'),
-(16, 105, 6, 9, 3, 'Normal', 0, '2025-03-03 23:43:08'),
-(17, 114, 4, 9, 5, 'Good', 0, '2025-03-04 08:55:49');
 
 -- --------------------------------------------------------
 
@@ -402,7 +376,7 @@ CREATE TABLE `user_cred` (
 --
 
 INSERT INTO `user_cred` (`id`, `name`, `email`, `address`, `phonenum`, `pincode`, `dob`, `profile`, `password`, `is_verified`, `token`, `t_expire`, `status`, `datentime`) VALUES
-(9, 'Nguyễn Văn A', 'abc@gmail.com', 'A', '0123456789', 100, '2003-01-01', 'IMG_68598.png', '$2y$10$PeMmLCaf8.MMzaKDttGnXemKlcJnn1ppyGJlRZPG/0zB2Y5t1Ngv2', 1, NULL, NULL, 1, '2025-02-28 14:32:35');
+(9, 'Nguyen Van A', 'nguyenvana@gmail.com', 'A', '0123456789', 100, '2003-01-01', 'IMG_68598.png', '$2y$10$vzIRCnRcDUWPNum3DdFMhOGH2o2TvIxyN/LSA9if9bbnHfrY1v7z.', 1, NULL, NULL, 1, '2025-02-28 14:32:35');
 
 -- --------------------------------------------------------
 
@@ -419,14 +393,6 @@ CREATE TABLE `user_queries` (
   `datentime` datetime NOT NULL DEFAULT current_timestamp(),
   `seen` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user_queries`
---
-
-INSERT INTO `user_queries` (`sr_no`, `name`, `email`, `subject`, `message`, `datentime`, `seen`) VALUES
-(17, 'Nguyen Van A', 'abc@gmaiil.com', 'Liên hệ', 'Hãy liên hệ với tôi', '2025-03-04 08:14:38', 0),
-(18, 'Nguyễn Văn A', 'abc@gmaiil.com', 'Call', 'Call me', '2025-03-04 08:15:33', 0);
 
 --
 -- Indexes for dumped tables
@@ -547,19 +513,19 @@ ALTER TABLE `user_queries`
 -- AUTO_INCREMENT for table `admin_cred`
 --
 ALTER TABLE `admin_cred`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `booking_details`
 --
 ALTER TABLE `booking_details`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- AUTO_INCREMENT for table `booking_order`
 --
 ALTER TABLE `booking_order`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- AUTO_INCREMENT for table `carousel`
@@ -589,7 +555,7 @@ ALTER TABLE `features`
 -- AUTO_INCREMENT for table `rating_review`
 --
 ALTER TABLE `rating_review`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `rooms`
@@ -625,19 +591,19 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `team_details`
 --
 ALTER TABLE `team_details`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user_cred`
 --
 ALTER TABLE `user_cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user_queries`
 --
 ALTER TABLE `user_queries`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
