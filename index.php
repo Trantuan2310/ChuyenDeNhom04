@@ -26,8 +26,6 @@
 
   <?php require('inc/header.php'); ?>
 
-  <!-- Carousel -->
-
   <div class="container-fluid px-lg-4 mt-4">
     <div class="swiper swiper-container">
       <div class="swiper-wrapper">
@@ -46,8 +44,6 @@
       </div>
     </div>
   </div>
-
-  <!-- check availability form -->
 
   <div class="container availability-form">
     <div class="row">
@@ -97,8 +93,6 @@
     </div>
   </div>
 
-  <!-- Our Rooms -->
-
   <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">PHÒNG</h2>
 
   <div class="container">
@@ -110,7 +104,6 @@
 
         while($room_data = mysqli_fetch_assoc($room_res))
         {
-          // get features of room
 
           $fea_q = mysqli_query($con,"SELECT f.name FROM `features` f 
             INNER JOIN `room_features` rfea ON f.id = rfea.features_id 
@@ -123,7 +116,6 @@
             </span>";
           }
 
-          // get facilities of room
 
           $fac_q = mysqli_query($con,"SELECT f.name FROM `facilities` f 
             INNER JOIN `room_facilities` rfac ON f.id = rfac.facilities_id 
@@ -136,7 +128,6 @@
             </span>";
           }
 
-          // get thumbnail of image
 
           $room_thumb = ROOMS_IMG_PATH."thumbnail.jpg";
           $thumb_q = mysqli_query($con,"SELECT * FROM `room_images` 
@@ -228,7 +219,6 @@
     </div>
   </div>
 
-  <!-- Our Facilities -->
 
   <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">CÁC TIỆN NGHI</h2>
 
@@ -254,7 +244,6 @@
     </div>
   </div>
 
-  <!-- Testimonials -->
 
   <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">ĐÁNH GIÁ TỪ KHÁCH HÀNG</h2>
 
@@ -309,7 +298,6 @@
     </div>
   </div>
 
-  <!-- Reach us -->
 
   <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">LIÊN HỆ</h2>
 
@@ -367,42 +355,8 @@
     </div>
   </div>
 
-
   <?php require('inc/footer.php'); ?>
 
-  <?php
-  
-    if(isset($_GET['account_recovery']))
-    {
-      $data = filteration($_GET);
-
-      $t_date = date("Y-m-d");
-
-      $query = select("SELECT * FROM `user_cred` WHERE `email`=? AND `token`=? AND `t_expire`=? LIMIT 1",
-        [$data['email'],$data['token'],$t_date],'sss');
-
-      if(mysqli_num_rows($query)==1)
-      {
-        echo<<<showModal
-          <script>
-            var myModal = document.getElementById('recoveryModal');
-
-            myModal.querySelector("input[name='email']").value = '$data[email]';
-            myModal.querySelector("input[name='token']").value = '$data[token]';
-
-            var modal = bootstrap.Modal.getOrCreateInstance(myModal);
-            modal.show();
-          </script>
-        showModal;
-      }
-      else{
-        alert("error","Invalid or Expired Link !");
-      }
-
-    }
-
-  ?>
-  
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
   <script>
@@ -448,9 +402,6 @@
         },
       }
     });
-
-
-
   </script>
 
 </body>

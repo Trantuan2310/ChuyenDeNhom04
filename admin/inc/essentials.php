@@ -1,6 +1,5 @@
 <?php 
 
-
   define('SITE_URL','http://localhost:8012/ChuyenDeNhom04/');
   define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
   define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
@@ -8,19 +7,12 @@
   define('ROOMS_IMG_PATH',SITE_URL.'images/rooms/');
   define('USERS_IMG_PATH',SITE_URL.'images/users/');
 
-
-
   define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/ChuyenDeNhom04/images/');
   define('ABOUT_FOLDER','about/');
   define('CAROUSEL_FOLDER','carousel/');
   define('FACILITIES_FOLDER','facilities/');
   define('ROOMS_FOLDER','rooms/');
   define('USERS_FOLDER','users/');
-
-
-
-
-  
 
   function adminLogin()
   {

@@ -45,7 +45,7 @@
         <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <?php 
-
+            
               $room_img = ROOMS_IMG_PATH."thumbnail.jpg";
               $img_q = mysqli_query($con,"SELECT * FROM `room_images` 
                 WHERE `room_id`='$room_data[id]'");

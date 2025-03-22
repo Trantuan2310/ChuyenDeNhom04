@@ -118,20 +118,20 @@
       else if(this.responseText == 'phone_already'){
         alert('error',"Số điện thoại đã được đăng ký!");
       }
+      else if(this.responseText == 'invalid_phone'){
+          alert('error',"Số điện thoại không hợp lệ!");
+        }
       else if(this.responseText == 'inv_img'){
         alert('error',"Chỉ cho phép hình ảnh JPG, WEBP & PNG!");
       }
       else if(this.responseText == 'upd_failed'){
         alert('error',"Tải lên hình ảnh không thành công!");
       }
-      else if(this.responseText == 'mail_failed'){
-        alert('error',"Không thể gửi email xác nhận! Máy chủ ngừng hoạt động!");
-      }
       else if(this.responseText == 'ins_failed'){
         alert('error',"Đăng ký không thành công! Máy chủ ngừng hoạt động!");
       }
       else{
-        alert('success',"Đăng ký thành công. Liên kết xác nhận được gửi đến email!");
+        alert('success',"Đăng ký thành công.");
         register_form.reset();
       }
     }
@@ -159,10 +159,7 @@
 
     xhr.onload = function(){
       if(this.responseText == 'inv_email_mob'){
-        alert('error',"Email hoặc số di động không hợp lệ!");
-      }
-      else if(this.responseText == 'not_verified'){
-        alert('error',"Email chưa được xác minh!");
+        alert('error',"Email hoặc số điện thoại không đúng!");
       }
       else if(this.responseText == 'inactive'){
         alert('error',"Toàn khoản bị khoá! Vui lòng liên hệ Quản trị viên.");
@@ -171,7 +168,6 @@
         alert('error',"Mật khẩu không đúng!");
       }
       else{
-        
         let fileurl = window.location.href.split('/').pop().split('?').shift();
         if(fileurl == 'room_details.php'){
           window.location = window.location.href;
@@ -184,48 +180,6 @@
 
     xhr.send(data);
   });
-
-  // let forgot_form = document.getElementById('forgot-form');
-
-  // forgot_form.addEventListener('submit', (e)=>{
-  //   e.preventDefault();
-
-  //   let data = new FormData();
-
-  //   data.append('email',forgot_form.elements['email'].value);
-  //   data.append('forgot_pass','');
-
-  //   var myModal = document.getElementById('forgotModal');
-  //   var modal = bootstrap.Modal.getInstance(myModal);
-  //   modal.hide();
-
-  //   let xhr = new XMLHttpRequest();
-  //   xhr.open("POST","ajax/login_register.php",true);
-
-  //   xhr.onload = function(){
-  //     if(this.responseText == 'inv_email'){
-  //       alert('error',"Email không hợp lệ !");
-  //     }
-  //     else if(this.responseText == 'not_verified'){
-  //       alert('error',"Email chưa được xác minh! Vui lòng liên hệ Quản trị viên");
-  //     }
-  //     else if(this.responseText == 'inactive'){
-  //       alert('error',"Toàn khoản bị đình chỉ! Vui lòng liên hệ Quản trị viên.");
-  //     }
-  //     else if(this.responseText == 'mail_failed'){
-  //       alert('error',"Không thể gửi email. Máy chủ ngừng hoạt động!");
-  //     }
-  //     else if(this.responseText == 'upd_failed'){
-  //       alert('error',"Khôi phục tài khoản không thành công. Máy chủ ngừng hoạt động!");
-  //     }
-  //     else{
-  //       alert('success',"Đặt lại liên kết được gửi đến email!");
-  //       forgot_form.reset();
-  //     }
-  //   }
-
-  //   xhr.send(data);
-  // });
 
   function checkLoginToBook(status,room_id){
     if(status){

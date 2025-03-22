@@ -17,6 +17,11 @@ if (isset($_POST['register'])) {
     exit;
   }
 
+  if (!preg_match('/^0\d{9}$/', $data['phonenum'])) {
+    echo 'invalid_phone';
+    exit;
+  }
+
   $u_exist = select(
     "SELECT * FROM `user_cred` WHERE `email` = ? OR `phonenum` = ? LIMIT 1",
     [$data['email'], $data['phonenum']],
@@ -61,7 +66,10 @@ if (isset($_POST['login'])) {
     echo 'inv_email_mob';
   } else {
     $u_fetch = mysqli_fetch_assoc($u_exist);
-    if ($u_fetch['is_verified'] == 0) {
+
+    if (!password_verify($data['pass'], $u_fetch['password'])) {
+      echo 'invalid_pass'; 
+    } else if ($u_fetch['is_verified'] == 0) {
       echo 'not_verified';
     } else if ($u_fetch['status'] == 0) {
       echo 'inactive';
