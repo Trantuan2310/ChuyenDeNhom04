@@ -178,6 +178,8 @@
       if(adults.value>0 || children.value>0){
         fetch_rooms();
         guests_btn.classList.remove('d-none');
+      }else{
+        guests_btn.classList.add('d-none');
       }
     }
 
