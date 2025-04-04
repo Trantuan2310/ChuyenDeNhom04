@@ -61,7 +61,7 @@
             </div>
             <div class="col-lg-2 mb-3">
               <label class="form-label" style="font-weight: 500;">Người Lớn</label>
-              <select class="form-select shadow-none" name="adult">
+              <select class="form-select shadow-none" name="adult" id="adult-select">
                 <?php 
                   $guests_q = mysqli_query($con,"SELECT MAX(adult) AS `max_adult`, MAX(children) AS `max_children` 
                     FROM `rooms` WHERE `status`='1' AND `removed`='0'");  
@@ -75,7 +75,7 @@
             </div>
             <div class="col-lg-2 mb-3">
               <label class="form-label" style="font-weight: 500;">Trẻ Em</label>
-              <select class="form-select shadow-none" name="children">
+              <select class="form-select shadow-none" name="children" id="children-select">
                 <?php 
                   for($i=1; $i<=$guests_res['max_children']; $i++){
                     echo"<option value='$i'>$i</option>";
@@ -402,6 +402,53 @@
         },
       }
     });
+
+    const adultSelect = document.getElementById('adult-select');
+    const childrenSelect = document.getElementById('children-select');
+
+    function validateChildrenLimit() {
+      const adults = parseInt(adultSelect.value);
+      const children = parseInt(childrenSelect.value);
+
+      if (children > adults * 3) {
+        alert('error','Số lượng trẻ em không được vượt quá 3 lần số người lớn!');
+      }
+    }
+
+    // Gọi hàm khi thay đổi số lượng trẻ em
+    childrenSelect.addEventListener('change', validateChildrenLimit);
+
+    // const adultSelect = document.getElementById("adult-select");
+    // const childrenSelect = document.getElementById("children-select");
+
+    // function updateChildrenOptions() {
+    //   const adultValue = parseInt(adultSelect.value);
+    //   const maxChildren = adultValue * 3;
+
+    //   // Lặp qua tất cả option trong select children
+    //   for (let i = 0; i < childrenSelect.options.length; i++) {
+    //     const option = childrenSelect.options[i];
+    //     const value = parseInt(option.value);
+
+    //     if (value <= maxChildren) {
+    //       option.disabled = false;
+    //     } else {
+    //       option.disabled = true;
+    //     }
+    //   }
+
+    //   // Nếu giá trị hiện tại của select children vượt quá max => reset
+    //   if (parseInt(childrenSelect.value) > maxChildren) {
+    //     childrenSelect.value = maxChildren;
+    //   }
+    // }
+
+    // // Khi thay đổi số người lớn
+    // adultSelect.addEventListener("change", updateChildrenOptions);
+
+    // // Gọi 1 lần ban đầu để khớp khi tải trang
+    // window.addEventListener("DOMContentLoaded", updateChildrenOptions);
+
   </script>
 
 </body>

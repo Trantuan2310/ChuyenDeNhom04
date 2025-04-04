@@ -121,5 +121,49 @@
 
   <?php require('inc/footer.php'); ?>
 
+  <script>
+    let isTyping = false;
+
+    // Theo dõi khi người dùng đang nhập
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        isTyping = true;
+      });
+    });
+
+    // Bắt sự kiện click vào các link trong trang
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        if (isTyping) {
+          e.preventDefault(); // chặn chuyển trang
+          alert('error', 'Bạn đang nhập thông tin!'); // gọi hàm alert tuỳ chỉnh
+        }
+      });
+    });
+  </script>
+
+
+  <!-- <script>
+    let isTyping = false;
+
+    // Theo dõi khi người dùng bắt đầu nhập vào bất kỳ input hoặc textarea nào
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        isTyping = true;
+      });
+    });
+
+    // Cảnh báo khi rời trang (chuyển tab, reload, đóng tab...)
+    window.addEventListener('beforeunload', function (e) {
+      if (isTyping) {
+        e.preventDefault();
+        e.returnValue = 'Bạn đang nhập thông tin. Bạn có chắc chắn muốn rời khỏi trang?';
+      }
+    });
+  </script> -->
+
+
 </body>
 </html>
