@@ -107,7 +107,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Số Điện Thoại</label>
-                  <input name="phonenum" type="number" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" required>
+                  <input name="phonenum" type="text" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" required pattern="0\d{9}" title="Số điện thoại không đúng định dạng">
+
                 </div>
                 <div class="col-md-12 mb-3">
                   <label class="form-label">Địa Chỉ</label>

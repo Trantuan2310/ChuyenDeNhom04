@@ -178,8 +178,30 @@
       if(adults.value>0 || children.value>0){
         fetch_rooms();
         guests_btn.classList.remove('d-none');
-      }
+      }else{
+        guests_btn.classList.add('d-none');
+      };
     }
+
+    // function guests_filter(){
+    //   let adultCount = parseInt(adults.value) || 0;
+    //   let childCount = parseInt(children.value) || 0;
+
+    //   // Kiểm tra nếu số trẻ em > 3 lần số người lớn
+    //   if (childCount > adultCount * 3) {
+    //     alert('error','Số trẻ em không được vượt quá 3 lần số người lớn!');
+    //     children.value = adultCount * 3; // Gán lại giá trị hợp lệ
+    //     childCount = adultCount * 3;
+    //   }
+
+    //   if(adultCount > 0 || childCount > 0){
+    //     fetch_rooms();
+    //     guests_btn.classList.remove('d-none');
+    //   } else {
+    //     guests_btn.classList.add('d-none');
+    //   }
+    // }
+
 
     function guests_clear(){
       adults.value='';
