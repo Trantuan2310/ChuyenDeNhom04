@@ -107,7 +107,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Số Điện Thoại</label>
-                  <input name="phonenum" type="number" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" required>
+                  <input name="phonenum" type="number" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" maxlength="10" required>
                 </div>
                 <div class="col-md-12 mb-3">
                   <label class="form-label">Địa Chỉ</label>
