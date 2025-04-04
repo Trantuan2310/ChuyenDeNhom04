@@ -159,7 +159,7 @@
 
     xhr.onload = function(){
       if(this.responseText == 'inv_email_mob'){
-        alert('error',"Email hoặc số điện thoại không đúng!");
+        alert('error',"Email hoặc số điện thoại không đúngđúng!");
       }
       else if(this.responseText == 'inactive'){
         alert('error',"Toàn khoản bị khoá! Vui lòng liên hệ Quản trị viên.");
