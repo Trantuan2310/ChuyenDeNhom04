@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2025 at 03:59 PM
+-- Generation Time: Apr 04, 2025 at 02:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -98,11 +98,13 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`sr_no`, `image`) VALUES
-(4, 'IMG_62045.png'),
-(5, 'IMG_93127.png'),
-(6, 'IMG_99736.png'),
-(8, 'IMG_40905.png'),
-(9, 'IMG_55677.png');
+(15, 'IMG_56299.jpg'),
+(16, 'IMG_23569.jpg'),
+(17, 'IMG_42242.jpg'),
+(19, 'IMG_20158.jpg'),
+(20, 'IMG_61665.jpg'),
+(21, 'IMG_96173.jpg'),
+(22, 'IMG_71669.jpg');
 
 -- --------------------------------------------------------
 
@@ -153,7 +155,8 @@ INSERT INTO `facilities` (`id`, `icon`, `name`, `description`) VALUES
 (15, 'IMG_41622.svg', 'Tivi', 'TV cung cấp cho khách hàng nhiều kênh truyền hình đa dạng và phong phú, bao gồm cả các kênh quốc tế và địa phương, các kênh phim, chương trình giải trí, tin tức, thể thao và giáo dục'),
 (17, 'IMG_47816.svg', 'Spa', 'Tại spa, khách hàng có thể trải nghiệm các liệu pháp chăm sóc da, tắm thủy lực, massage và nhiều dịch vụ khác.'),
 (18, 'IMG_96423.svg', 'Máy Sưởi', 'Máy sưởi phòng được thiết kế để giữ cho phòng ấm áp và thoải mái trong suốt mùa đông.'),
-(19, 'IMG_27079.svg', 'Nóng Lạnh', 'Được trang bị các tính năng và thiết bị hiện đại như màn hình LCD hiển thị nhiệt độ, điều khiển từ xa, cảm biến nhiệt độ và chức năng tự động điều chỉnh nhiệt độ nước.');
+(19, 'IMG_27079.svg', 'Nóng Lạnh', 'Được trang bị các tính năng và thiết bị hiện đại như màn hình LCD hiển thị nhiệt độ, điều khiển từ xa, cảm biến nhiệt độ và chức năng tự động điều chỉnh nhiệt độ nước.'),
+(22, 'IMG_91057.svg', 'Tủ lạnh', 'Tủ lạnh trong homestay nhỏ gọn và tiện lợi, giúp bảo quản thực phẩm và đồ uống cho khách. Với ngăn lạnh và ngăn đông, tủ giữ thực phẩm tươi ngon, đồng thời mang đến sự thoải mái và tiện nghi cho không gian sống. Nhiều tủ còn có minibar, phục vụ nhu c');
 
 -- --------------------------------------------------------
 
@@ -174,7 +177,8 @@ INSERT INTO `features` (`id`, `name`) VALUES
 (18, 'Phòng Ngủ'),
 (19, 'Ban Công'),
 (20, 'Phòng Bếp'),
-(21, 'Ghế sofa');
+(21, 'Ghế sofa'),
+(22, 'Phòng tắm');
 
 -- --------------------------------------------------------
 
@@ -306,15 +310,19 @@ CREATE TABLE `room_images` (
 --
 
 INSERT INTO `room_images` (`sr_no`, `room_id`, `image`, `thumb`) VALUES
-(26, 3, 'IMG_95263.png', 1),
-(27, 3, 'IMG_67237.png', 0),
-(28, 4, 'IMG_45742.png', 0),
-(29, 4, 'IMG_25983.png', 1),
-(30, 5, 'IMG_61875.png', 1),
-(31, 5, 'IMG_48729.png', 0),
-(32, 6, 'IMG_96889.png', 0),
-(33, 6, 'IMG_82238.jpg', 1),
-(34, 8, 'IMG_71497.png', 1);
+(43, 6, 'IMG_28697.webp', 0),
+(44, 6, 'IMG_37204.webp', 1),
+(46, 5, 'IMG_59700.webp', 1),
+(47, 5, 'IMG_62236.webp', 0),
+(48, 4, 'IMG_88248.jpg', 1),
+(49, 4, 'IMG_51168.webp', 0),
+(50, 3, 'IMG_40381.webp', 1),
+(51, 3, 'IMG_60205.webp', 0),
+(52, 4, 'IMG_34082.webp', 0),
+(53, 5, 'IMG_36673.webp', 0),
+(54, 8, 'IMG_12565.webp', 1),
+(55, 8, 'IMG_49467.webp', 0),
+(56, 6, 'IMG_80860.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -376,7 +384,7 @@ CREATE TABLE `user_cred` (
 --
 
 INSERT INTO `user_cred` (`id`, `name`, `email`, `address`, `phonenum`, `pincode`, `dob`, `profile`, `password`, `is_verified`, `token`, `t_expire`, `status`, `datentime`) VALUES
-(9, 'Nguyen Van A', 'nguyenvana@gmail.com', 'A', '0123456789', 100, '2003-01-01', 'IMG_68598.png', '$2y$10$vzIRCnRcDUWPNum3DdFMhOGH2o2TvIxyN/LSA9if9bbnHfrY1v7z.', 1, NULL, NULL, 1, '2025-02-28 14:32:35');
+(9, 'Nguyen Van A', 'nguyenvana@gmail.com', 'A', '0123456789', 100, '2003-01-01', 'IMG_33437.png', '$2y$10$vzIRCnRcDUWPNum3DdFMhOGH2o2TvIxyN/LSA9if9bbnHfrY1v7z.', 1, NULL, NULL, 1, '2025-02-28 14:32:35');
 
 -- --------------------------------------------------------
 
@@ -531,7 +539,7 @@ ALTER TABLE `booking_order`
 -- AUTO_INCREMENT for table `carousel`
 --
 ALTER TABLE `carousel`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `contact_details`
@@ -543,13 +551,13 @@ ALTER TABLE `contact_details`
 -- AUTO_INCREMENT for table `facilities`
 --
 ALTER TABLE `facilities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `features`
 --
 ALTER TABLE `features`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `rating_review`
@@ -579,7 +587,7 @@ ALTER TABLE `room_features`
 -- AUTO_INCREMENT for table `room_images`
 --
 ALTER TABLE `room_images`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -597,13 +605,13 @@ ALTER TABLE `team_details`
 -- AUTO_INCREMENT for table `user_cred`
 --
 ALTER TABLE `user_cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `user_queries`
 --
 ALTER TABLE `user_queries`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
