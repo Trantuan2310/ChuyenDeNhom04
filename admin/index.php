@@ -56,7 +56,7 @@
         alert('error','Sai tài khoản - Tên đăng nhập không tồn tại!');
       }
       else {
-        $row = mysqli_fetch_assoc($res);
+         $row = mysqli_fetch_assoc($res);
         
         if ($row['admin_pass'] === $frm_data['admin_pass']) {
           $_SESSION['adminLogin'] = true;
