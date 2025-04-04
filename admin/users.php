@@ -38,10 +38,8 @@
                     <th scope="col">Số Điện Thoại</th>
                     <th scope="col">Địa Chỉ</th>
                     <th scope="col">Ngày sinh</th>
-                    <!-- <th scope="col">Xác Minh</th> -->
                     <th scope="col">Trạng Thái</th>
                     <th scope="col">Ngày Đăng Ký</th>
-                    <!-- <th scope="col">Action</th> -->
                   </tr>
                 </thead>
                 <tbody id="users-data">                 
@@ -59,7 +57,56 @@
 
   <?php require('inc/scripts.php'); ?>
 
-  <script src="scripts/users.js"></script>
+  <script>
+    function get_users()
+    {
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST","ajax/users.php",true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+      xhr.onload = function(){
+        document.getElementById('users-data').innerHTML = this.responseText;
+      }
+    
+      xhr.send('get_users');
+    }
+    
+    
+    function toggle_status(id,val)
+    {
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST","ajax/users.php",true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+      xhr.onload = function(){
+        if(this.responseText==1){
+          alert('success','Đã bật trạng thái!');
+          get_users();
+        }
+        else{
+          alert('success','Máy chủ ngừng hoạt động!');
+        }
+      }
+    
+      xhr.send('toggle_status='+id+'&value='+val);
+    }
+    
+    function search_user(username){
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST","ajax/users.php",true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+      xhr.onload = function(){
+        document.getElementById('users-data').innerHTML = this.responseText;
+      }
+    
+      xhr.send('search_user&name='+username);
+    }
+    
+    window.onload = function(){
+      get_users();
+    }
+  </script>
 
 </body>
 </html>
