@@ -70,25 +70,36 @@ if(isset($_POST['profile_form']))
     }
 }
 
-if(isset($_POST['pass_form']))
-{
+if(isset($_POST['pass_form'])){
     $frm_data = filteration($_POST);
     session_start();
 
-    if($frm_data['new_pass'] != $frm_data['confirm_pass']){
-        echo 'mismatch';
+    // Lấy mật khẩu hiện tại từ database
+    $u_exist = select("SELECT `password` FROM `user_cred` WHERE `id`=? LIMIT 1", [$_SESSION['uId']], "s");
+    if(mysqli_num_rows($u_exist) == 0){
+        echo 'upd_failed';
         exit;
     }
 
-    $enc_pass = password_hash($frm_data['new_pass'], PASSWORD_BCRYPT);
-    $query = "UPDATE `user_cred` SET `password`=? WHERE `id`=? LIMIT 1";
-    $values = [$enc_pass, $_SESSION['uId']];
+    $u_fetch = mysqli_fetch_assoc($u_exist);
+    $hashed_pass = $u_fetch['password'];
 
-    if(update($query, $values, 'ss')){
-        echo 1;
+    // Kiểm tra mật khẩu cũ có đúng không
+    if(!password_verify($frm_data['current_pass'], $hashed_pass)){
+        echo 'wrong_pass';
+        exit;
     }
-    else{
-        echo 0;
+
+    // Hash mật khẩu mới
+    $new_hashed_pass = password_hash($frm_data['new_pass'], PASSWORD_BCRYPT);
+    $update = update("UPDATE `user_cred` SET `password`=? WHERE `id`=?", [$new_hashed_pass, $_SESSION['uId']], "ss");
+
+    if($update){
+        session_destroy(); // Xóa session để đăng xuất
+        echo 'success';
+    } else {
+        echo 'upd_failed';
     }
 }
+
 ?>

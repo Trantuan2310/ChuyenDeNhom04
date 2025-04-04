@@ -90,6 +90,11 @@
           <form id="pass-form">
             <h5 class="mb-3 fw-bold">Đổi Mật Khẩu</h5>
             <div class="row">
+            <div class="col-md-6 mb-3">
+               <label class="form-label">Mật Khẩu Hiện Tại</label>
+               <input name="current_pass" type="password" class="form-control shadow-none" required>
+            </div>
+
               <div class="col-md-6 mb-3">
                 <label class="form-label">Mật Khẩu Mới</label>
                 <input name="new_pass" type="password" class="form-control shadow-none" required>
@@ -184,41 +189,42 @@
     let pass_form = document.getElementById('pass-form');
 
     pass_form.addEventListener('submit',function(e){
-      e.preventDefault();
+    e.preventDefault();
 
-      let new_pass = pass_form.elements['new_pass'].value;
-      let confirm_pass = pass_form.elements['confirm_pass'].value;
+    let current_pass = pass_form.elements['current_pass'].value;
+    let new_pass = pass_form.elements['new_pass'].value;
+    let confirm_pass = pass_form.elements['confirm_pass'].value;
 
-      if(new_pass!=confirm_pass){
-        alert('error','Mật khẩu không khớp!');
+    if(new_pass != confirm_pass){
+        alert('error','Mật khẩu mới không khớp!');
         return false;
-      }
+    }
 
+    let data = new FormData();
+    data.append('pass_form','');
+    data.append('current_pass', current_pass);
+    data.append('new_pass', new_pass);
+    data.append('confirm_pass', confirm_pass);
 
-      let data = new FormData();
-      data.append('pass_form','');
-      data.append('new_pass',new_pass);
-      data.append('confirm_pass',confirm_pass);
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST","ajax/profile.php",true);
 
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST","ajax/profile.php",true);
-
-      xhr.onload = function()
-      {
-        if(this.responseText == 'mismatch'){
-          alert('error',"Mật khẩu không khớp!");
+    xhr.onload = function(){
+        if(this.responseText == 'wrong_pass'){
+            alert('error',"Bạn nhập sai mật khẩu hiện tại!");
         }
-        else if(this.responseText == 0){
-          alert('error',"Cập nhật không thành công!");
+        else if(this.responseText == 'upd_failed'){
+            alert('error',"Cập nhật thất bại!");
         }
         else{
-          alert('success','Lưu thay đổi!');
-          pass_form.reset();
+            alert('success','Mật khẩu đã được đổi! Vui lòng đăng nhập lại.');
+            window.location.href = 'logout.php'; // Đăng xuất sau khi đổi mật khẩu
         }
-      }
+    }
 
-      xhr.send(data);
-    });
+    xhr.send(data);
+});
+
 
   </script>
 

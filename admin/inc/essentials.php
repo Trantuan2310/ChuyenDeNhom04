@@ -1,6 +1,6 @@
 <?php 
 
-  define('SITE_URL','http://localhost:8012/ChuyenDeNhom04/');
+  define('SITE_URL','http://localhost:8088/ChuyenDeNhom04/');
   define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
   define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
   define('FACILITIES_IMG_PATH',SITE_URL.'images/facilities/');
